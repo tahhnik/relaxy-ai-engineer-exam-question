@@ -11,6 +11,12 @@ This project leverages machine learning to automate and enhance the loan approva
 - User-Friendly Deployment: A web interface built with Flask and styled with Tailwind CSS allows for seamless interaction, enabling users to input data and receive instant predictions.
 - Explainable AI: With the help of LIME, individual predictions can be explained to understand feature impact on the decision.
 
+## Dataset
+
+The dataset used for this project contains various features related to loan applications, including applicant demographics, loan amount, and loan purpose. The data can be found on Kaggle:
+
+- **Dataset Link:** [Loan Approval Dataset](https://www.kaggle.com/datasets/architsharma01/loan-approval-prediction-dataset)
+
 ## Project Structure
 
 1. Data Preprocessing & Feature Engineering: Prepares and cleanses data to improve model training efficiency and accuracy.
