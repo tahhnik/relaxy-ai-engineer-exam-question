@@ -38,17 +38,16 @@
     </header>
 
     <main class="container mx-auto mt-10 px-6">
-        <section class="mb-10 flex items-center">
+        <section class="mb-10 flex flex-col md:flex-row items-center">
             <div class="w-full md:w-1/2 pr-6">
                 <h1 class="text-4xl font-bold text-[#FAFAFA] mb-4">About Us</h1>
                 <p class="text-gray-200 mb-4">
                     Welcome to Loan Sense, your trusted partner in predicting loan approvals. We utilize advanced machine learning techniques to analyze various features and provide reliable predictions for loan applications. Our mission is to empower individuals and businesses by providing them with the insights they need to make informed financial decisions.
                 </p>
-
                 <p class="text-gray-200 mb-4">
                     At Loan Sense, we believe that access to financial information is essential for making sound decisions. Our team of experts continuously improves our algorithms and models to ensure accuracy and reliability. Whether you're an individual seeking a personal loan or a business looking for financing options, we are here to help you navigate the complex loan approval process.
                 </p>
-                <div class="flex space-x-4 ">
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
                     <a href="https://www.kaggle.com/code/bisheshgiri/loan-approval" class="bg-[#e5b372] text-white font-semibold py-2 px-4 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">
                         Learn More
                     </a>
@@ -57,8 +56,8 @@
                     </a>
                 </div>
             </div>
-            <div class="w-full md:w-1/2">
-                <img src="{{ url_for('static', filename='img/hero1.png') }}" alt="About Us Image" class="w-full h-auto rounded-lg ">
+            <div class="w-full md:w-1/2 mt-6 md:mt-0">
+                <img src="{{ url_for('static', filename='img/hero1.png') }}" alt="About Us Image" class="w-full h-auto rounded-lg">
             </div>
         </section>
         
@@ -82,6 +81,64 @@
                 </ol>
             </div>
         </section>
+
+        <section class="mb-10 bg-[#afc0bf]-800 p-6 rounded-lg">
+            <h2 class="text-3xl font-semibold text-white mb-4 text-center">Loan Approval Dataset Guidelines</h2>
+            <p class="text-gray-300 mb-6 text-center">
+                Please fill in the following fields accurately to ensure reliable loan approval predictions.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold text-[#eaa239] mb-2">1. Loan ID</h3>
+                    <p class="text-gray-200">Unique identifier for each loan.</p>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold text-[#eaa239] mb-2">2. Number of Dependents</h3>
+                    <p class="text-gray-200">Enter the number of dependents the applicant has.</p>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold text-[#eaa239] mb-2">3. Annual Income</h3>
+                    <p class="text-gray-200">Annual income of the applicant (in currency).</p>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold text-[#eaa239] mb-2">4. Loan Amount</h3>
+                    <p class="text-gray-200">Total amount of the loan requested.</p>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold text-[#eaa239] mb-2">5. Loan Term</h3>
+                    <p class="text-gray-200">Duration of the loan (in months).</p>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold text-[#eaa239] mb-2">6. CIBIL Score</h3>
+                    <p class="text-gray-200">Credit score of the applicant.</p>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold text-[#eaa239] mb-2">7. Residential Assets Value</h3>
+                    <p class="text-gray-200">Value of residential assets owned by the applicant.</p>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold text-[#eaa239] mb-2">8. Commercial Assets Value</h3>
+                    <p class="text-gray-200">Value of commercial assets owned by the applicant.</p>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold text-[#eaa239] mb-2">9. Luxury Assets Value</h3>
+                    <p class="text-gray-200">Value of luxury assets owned by the applicant.</p>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold text-[#eaa239] mb-2">10. Bank Asset Value</h3>
+                    <p class="text-gray-200">Value of bank assets owned by the applicant.</p>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold text-[#eaa239] mb-2">11. Education</h3>
+                    <p class="text-gray-200">Educational qualification of the applicant (Graduate or Not Graduate).</p>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-xl font-bold text-[#eaa239] mb-2">12. Self-Employed</h3>
+                    <p class="text-gray-200">Employment status of the applicant (Yes or No).</p>
+                </div>
+            </div>
+        </section>
+        
         
 
         <section class="mb-10">

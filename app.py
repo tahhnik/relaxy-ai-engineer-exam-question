@@ -5,6 +5,8 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import StackingClassifier
 
+from utils import preprocess
+
 
 
 
@@ -64,40 +66,12 @@ def predict():
     # Combine numerical and categorical inputs
     input_data = pd.DataFrame([numerical_inputs + categorical_inputs], columns=selected_features)
 
-    feature_engineering(input_data)
-
-    print(input_data.columns)
-
-    numerical_cols = [
-    'income_annum', 'loan_amount', 'loan_term', 
-    'cibil_score', 'residential_assets_value', 
-    'commercial_assets_value', 'luxury_assets_value', 
-    'bank_asset_value', 'income_per_dependent'] 
-
-    categorical_cols = ['education', 'self_employed', 'cibil_category']
-
-    selected_cols = numerical_cols + categorical_cols 
-    columns_names = numerical_cols + categorical_cols + ['education_2','self_employed_2','cibil_category_2','cibil_category_3']
-
-    # Apply preprocessing to input data
-    processed_data = preprocessor.transform(input_data[selected_cols])
-
-    processed_df = pd.DataFrame(processed_data, columns=columns_names) 
-    processed_df['total_asset_value'] = input_data['total_asset_value']
-    processed_df['loan_to_income_ratio'] = input_data['loan_to_income_ratio']
-    processed_df['no_of_dependents'] = input_data['no_of_dependents']
-
-    #listing = input_data.tolist()
-    #return jsonify({'prediction': listing})
-
-    
+    processed_df = preprocess(input_data)
 
     predictions = final_model.predict(processed_df)
     predictions = 1 if predictions == 1 else -1
     return render_template("index.html", predictions=predictions)
 
-    # table_html = processed_df.to_html(classes='data', header="true", index=False)
-    # return render_template("index.html", table=table_html)
 
 @app.route('/xgboost', methods=["GET", "POST"])
 def xgboost():
@@ -108,42 +82,13 @@ def predict_xgboost():
     numerical_inputs = [float(request.form[feature]) for feature in numerical_features]
     categorical_inputs = [request.form[feature] for feature in categorical_features]
 
-    # Combine numerical and categorical inputs
     input_data = pd.DataFrame([numerical_inputs + categorical_inputs], columns=selected_features)
 
-    feature_engineering(input_data)
+    processed_df = preprocess(input_data)
 
-    print(input_data.columns)
-
-    numerical_cols = [
-    'income_annum', 'loan_amount', 'loan_term', 
-    'cibil_score', 'residential_assets_value', 
-    'commercial_assets_value', 'luxury_assets_value', 
-    'bank_asset_value', 'income_per_dependent'] 
-
-    categorical_cols = ['education', 'self_employed', 'cibil_category']
-
-    selected_cols = numerical_cols + categorical_cols 
-    columns_names = numerical_cols + categorical_cols + ['education_2','self_employed_2','cibil_category_2','cibil_category_3']
-
-    # Apply preprocessing to input data
-    processed_data = preprocessor.transform(input_data[selected_cols])
-
-    processed_df = pd.DataFrame(processed_data, columns=columns_names) 
-    processed_df['total_asset_value'] = input_data['total_asset_value']
-    processed_df['loan_to_income_ratio'] = input_data['loan_to_income_ratio']
-    processed_df['no_of_dependents'] = input_data['no_of_dependents']
-
-    #listing = input_data.tolist()
-    #return jsonify({'prediction': listing})
-
-    
     predictions = model.predict(processed_df)
     predictions = 1 if predictions == 1 else -1
     return render_template("model1.html", predictions=predictions)
-
-    # table_html = processed_df.to_html(classes='data', header="true", index=False)
-    # return render_template("index.html", table=table_html)
 
 
 @app.route('/lgbm', methods=["GET", "POST"])
@@ -155,42 +100,13 @@ def predict_lgbm():
     numerical_inputs = [float(request.form[feature]) for feature in numerical_features]
     categorical_inputs = [request.form[feature] for feature in categorical_features]
 
-    # Combine numerical and categorical inputs
     input_data = pd.DataFrame([numerical_inputs + categorical_inputs], columns=selected_features)
 
-    feature_engineering(input_data)
-
-    print(input_data.columns)
-
-    numerical_cols = [
-    'income_annum', 'loan_amount', 'loan_term', 
-    'cibil_score', 'residential_assets_value', 
-    'commercial_assets_value', 'luxury_assets_value', 
-    'bank_asset_value', 'income_per_dependent'] 
-
-    categorical_cols = ['education', 'self_employed', 'cibil_category']
-
-    selected_cols = numerical_cols + categorical_cols 
-    columns_names = numerical_cols + categorical_cols + ['education_2','self_employed_2','cibil_category_2','cibil_category_3']
-
-    # Apply preprocessing to input data
-    processed_data = preprocessor.transform(input_data[selected_cols])
-
-    processed_df = pd.DataFrame(processed_data, columns=columns_names) 
-    processed_df['total_asset_value'] = input_data['total_asset_value']
-    processed_df['loan_to_income_ratio'] = input_data['loan_to_income_ratio']
-    processed_df['no_of_dependents'] = input_data['no_of_dependents']
-
-    #listing = input_data.tolist()
-    #return jsonify({'prediction': listing})
-
+    processed_df = preprocess(input_data)
     
     predictions = model2.predict(processed_df)
     predictions = 1 if predictions == 1 else -1
     return render_template("model2.html", predictions=predictions)
-
-    # table_html = processed_df.to_html(classes='data', header="true", index=False)
-    # return render_template("index.html", table=table_html)
 
 @app.route('/rf', methods=["GET", "POST"])
 def rf():
@@ -201,41 +117,13 @@ def predict_rf():
     numerical_inputs = [float(request.form[feature]) for feature in numerical_features]
     categorical_inputs = [request.form[feature] for feature in categorical_features]
 
-    # Combine numerical and categorical inputs
     input_data = pd.DataFrame([numerical_inputs + categorical_inputs], columns=selected_features)
 
-    feature_engineering(input_data)
-
-    print(input_data.columns)
-
-    numerical_cols = [
-    'income_annum', 'loan_amount', 'loan_term', 
-    'cibil_score', 'residential_assets_value', 
-    'commercial_assets_value', 'luxury_assets_value', 
-    'bank_asset_value', 'income_per_dependent'] 
-
-    categorical_cols = ['education', 'self_employed', 'cibil_category']
-
-    selected_cols = numerical_cols + categorical_cols 
-    columns_names = numerical_cols + categorical_cols + ['education_2','self_employed_2','cibil_category_2','cibil_category_3']
-
-    # Apply preprocessing to input data
-    processed_data = preprocessor.transform(input_data[selected_cols])
-
-    processed_df = pd.DataFrame(processed_data, columns=columns_names) 
-    processed_df['total_asset_value'] = input_data['total_asset_value']
-    processed_df['loan_to_income_ratio'] = input_data['loan_to_income_ratio']
-    processed_df['no_of_dependents'] = input_data['no_of_dependents']
-
-    #listing = input_data.tolist()
-    #return jsonify({'prediction': listing})
+    processed_df = preprocess(input_data)
 
     predictions = model3.predict(processed_df)
     predictions = 1 if predictions == 1 else -1
     return render_template("model3.html", predictions=predictions)
-
-    # table_html = processed_df.to_html(classes='data', header="true", index=False)
-    # return render_template("index.html", table=table_html)
 
 
 @app.route('/dt', methods=["GET", "POST"])
@@ -250,39 +138,12 @@ def predict_dt():
     # Combine numerical and categorical inputs
     input_data = pd.DataFrame([numerical_inputs + categorical_inputs], columns=selected_features)
 
-    feature_engineering(input_data)
+    processed_df = preprocess(input_data)
 
-    print(input_data.columns)
-
-    numerical_cols = [
-    'income_annum', 'loan_amount', 'loan_term', 
-    'cibil_score', 'residential_assets_value', 
-    'commercial_assets_value', 'luxury_assets_value', 
-    'bank_asset_value', 'income_per_dependent'] 
-
-    categorical_cols = ['education', 'self_employed', 'cibil_category']
-
-    selected_cols = numerical_cols + categorical_cols 
-    columns_names = numerical_cols + categorical_cols + ['education_2','self_employed_2','cibil_category_2','cibil_category_3']
-
-    # Apply preprocessing to input data
-    processed_data = preprocessor.transform(input_data[selected_cols])
-
-    processed_df = pd.DataFrame(processed_data, columns=columns_names) 
-    processed_df['total_asset_value'] = input_data['total_asset_value']
-    processed_df['loan_to_income_ratio'] = input_data['loan_to_income_ratio']
-    processed_df['no_of_dependents'] = input_data['no_of_dependents']
-
-    #listing = input_data.tolist()
-    #return jsonify({'prediction': listing})
-
-    
     predictions = model4.predict(processed_df)
     predictions = 1 if predictions == 1 else -1
     return render_template("model4.html", predictions=predictions)
 
-    # table_html = processed_df.to_html(classes='data', header="true", index=False)
-    # return render_template("index.html", table=table_html)
 
 @app.route('/about')
 def about():
