@@ -66,6 +66,21 @@ The Loan Approval Prediction model is deployed using Render, enabling users to i
 
 Visit the link to test the model's predictive capabilities and explore the user-friendly interface built for efficient loan assessment.
 
+## Detailed Report
+
+For a comprehensive understanding of the project, including methodology, model development, and deployment steps, refer to the detailed report:
+
+- **[Loan Approval Report](Loan_Approval_Report.pdf)**
+
+This report provides insights into data preprocessing, feature engineering, model selection, and evaluation techniques applied to build a robust loan approval prediction model.
+
+## Project Notebook on Kaggle
+
+The complete code and exploratory data analysis can be found on Kaggle:
+
+- **[Loan Approval Prediction Notebook on Kaggle](https://www.kaggle.com/code/bisheshgiri/loan-approval)**
+
+This notebook includes all the steps from data analysis to model building, allowing for easy replication and further experimentation.
 
 ## Tech Stack
 
