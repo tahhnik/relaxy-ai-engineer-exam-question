@@ -2,8 +2,9 @@ from flask import Flask, jsonify, render_template, request
 import joblib
 import pandas as pd
 # import xgboost
-import pickle
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import StackingClassifier
+
 
 def feature_engineering(X):
     X['loan_to_income_ratio'] = X['loan_amount'] / X['income_annum']
@@ -35,8 +36,7 @@ model2 = joblib.load("./models/best_lgbm.pkl")
 model3 = joblib.load("./models/best_rf.pkl")
 model4 = joblib.load("./models/best_dt.pkl")
 
-
-
+final_model = joblib.load("./models/stacked_model.pkl")
 
 
 numerical_features = [
@@ -47,7 +47,6 @@ numerical_features = [
 ]
 categorical_features = ['education', 'self_employed']
 selected_features = numerical_features + categorical_features
-
 
 
 @app.route('/', methods=["GET", "POST"])
@@ -85,12 +84,14 @@ def predict():
     processed_df['loan_to_income_ratio'] = input_data['loan_to_income_ratio']
     processed_df['no_of_dependents'] = input_data['no_of_dependents']
 
-
     #listing = input_data.tolist()
     #return jsonify({'prediction': listing})
 
-    predictions = model4.predict(processed_df)
-    return render_template("index.html", prediction_text=f"The loan is {predictions}")
+    
+
+    predictions = final_model.predict(processed_df)
+    predictions = 1 if predictions == 1 else -1
+    return render_template("index.html", predictions=predictions)
 
     # table_html = processed_df.to_html(classes='data', header="true", index=False)
     # return render_template("index.html", table=table_html)
