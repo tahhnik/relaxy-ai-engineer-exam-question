@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>About Us - Loan Sense</title>
 
     <style>
@@ -40,7 +40,7 @@
     <main class="container mx-auto mt-10 px-6">
         <section class="mb-10 flex items-center">
             <div class="w-full md:w-1/2 pr-6">
-                <h1 class="text-2xl font-bold text-[#FAFAFA] mb-4">About Us</h1>
+                <h1 class="text-4xl font-bold text-[#FAFAFA] mb-4">About Us</h1>
                 <p class="text-gray-200 mb-4">
                     Welcome to Loan Sense, your trusted partner in predicting loan approvals. We utilize advanced machine learning techniques to analyze various features and provide reliable predictions for loan applications. Our mission is to empower individuals and businesses by providing them with the insights they need to make informed financial decisions.
                 </p>
@@ -49,62 +49,98 @@
                     At Loan Sense, we believe that access to financial information is essential for making sound decisions. Our team of experts continuously improves our algorithms and models to ensure accuracy and reliability. Whether you're an individual seeking a personal loan or a business looking for financing options, we are here to help you navigate the complex loan approval process.
                 </p>
                 <div class="flex space-x-4 ">
-                    <a href="/learn-more" class="bg-gradient-to-r from-[#0b0dac] to-[#f901de] text-white font-semibold py-2 px-4 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">
+                    <a href="https://www.kaggle.com/code/bisheshgiri/loan-approval" class="bg-[#e5b372] text-white font-semibold py-2 px-4 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">
                         Learn More
                     </a>
-                    <a href="/get-started" class="bg-teal-600 text-white font-semibold py-2 px-4 rounded-lg shadow-lg hover:bg-teal-700 transition duration-300">
+                    <a href="https://github.com/bses7/Loan-Approval-Model" class="bg-[#cce3e9] text-gray-800 font-semibold py-2 px-4 rounded-lg shadow-lg hover:bg-teal-700 transition duration-300">
                         Get Started
                     </a>
                 </div>
             </div>
             <div class="w-full md:w-1/2">
-                <img src="{{ url_for('static', filename='img/icon1.png') }}" alt="About Us Image" class="w-full h-auto rounded-lg ">
+                <img src="{{ url_for('static', filename='img/hero1.png') }}" alt="About Us Image" class="w-full h-auto rounded-lg ">
             </div>
         </section>
         
-        <section class="mb-10 flex flex-col md:flex-row items-center">
+        <section class="mb-10 flex flex-col md:flex-row items-center bg-gray-800 p-6 rounded-lg">
             <div class="w-full md:w-1/2">
-                <img src="{{ url_for('static', filename='img/model.png') }}" alt="About Us Image" class="w-full h-auto rounded-lg ">
+                <img src="{{ url_for('static', filename='img/model.png') }}" alt="Prediction Process Image" class="w-full h-auto rounded-lg">
             </div>
             <div class="md:w-1/2 md:pl-10">
-                <h2 class="text-3xl font-semibold text-white mb-4">How We Make Predictions</h2> <!-- Changed to white for better contrast -->
-                <p class="text-gray-300 mb-4"> <!-- Lightened the paragraph text -->
-                    At Loan Sense, we leverage state-of-the-art machine learning models to predict loan approvals. Our approach involves the following steps:
+                <h2 class="text-3xl font-semibold text-white mb-4">How We Make Predictions</h2>
+                <p class="text-gray-300 mb-4">
+                    At Loan Sense, we leverage a comprehensive machine learning pipeline to predict loan approvals. This process includes:
                 </p>
-                <ol class="list-decimal list-inside text-gray-200"> <!-- Lightened the list item text -->
-                    <li><strong>Data Collection:</strong> We gather relevant data, including applicant details, financial history, and other features that influence loan decisions.</li>
-                    <li><strong>Data Processing:</strong> Our team cleans and preprocesses the data to ensure accuracy and reliability.</li>
-                    <li><strong>Model Training:</strong> We train various machine learning models such as XGBoost, Random Forest, and Decision Trees to identify patterns and predict loan outcomes.</li>
-                    <li><strong>Prediction:</strong> Once trained, our models analyze new loan applications and provide predictions based on learned patterns.</li>
+                <ol class="list-decimal list-inside text-gray-200">
+                    <li><strong>Data Exploration:</strong> We start by loading, inspecting, and analyzing data to understand its structure, distributions, and any missing or duplicate values.</li><br>
+                    <li><strong>Data Cleaning:</strong> Our team cleans the dataset by handling missing values, removing duplicates, and treating any outliers to prepare the data for analysis.</li><br>
+                    <li><strong>Exploratory Data Analysis (EDA):</strong> Through visualizations, we examine feature distributions, correlations, and relationships between categorical features and loan outcomes.</li><br>
+                    <li><strong>Data Preprocessing:</strong> Categorical features are encoded, and numerical features are standardized to ensure consistent scaling for optimal model performance.</li><br>
+                    <li><strong>Model Building:</strong> We experiment with various machine learning models, including Random Forest, Gradient Boosting, and Support Vector Classifier, to identify the best-performing approach.</li><br>
+                    <li><strong>Evaluation:</strong> Each model is evaluated based on metrics such as accuracy, precision, recall, and F1 score to determine the most effective one for loan approval predictions.</li><br>
+                    <li><strong>Final Model Selection:</strong> The model with the best performance is selected, ensuring high accuracy and reliability for loan application predictions.</li><br>
                 </ol>
             </div>
         </section>
         
 
         <section class="mb-10">
-            <h2 class="text-3xl font-semibold text-gray-900 mb-6 text-center">Examples of Loan Outcomes</h2>
+            <h2 class="text-3xl font-semibold text-white-900 mb-6 text-center">Examples of Loan Outcomes</h2>
         
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Approved Loan Example -->
                 <div class="bg-gradient-to-r from-green-100 to-green-200 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
                     <h3 class="text-xl font-bold text-green-800 mb-2">Loan Approved</h3>
                     <p class="text-gray-800">
-                        <strong>Applicant:</strong> John Doe<br>
-                        <strong>Loan Amount:</strong> $15,000<br>
+                        <strong>Education:</strong> Not Graduate<br>
+                        <strong>Self-Employed:</strong> Yes<br>
+                        <strong>Income (Annual):</strong> $3,300,000<br>
+                        <strong>Loan Amount:</strong> $11,300,000<br>
+                        <strong>Loan Term:</strong> 20 years<br>
+                        <strong>CIBIL Score:</strong> 559<br>
+                        <strong>Residential Assets Value:</strong> $4,200,000<br>
+                        <strong>Commercial Assets Value:</strong> $2,900,000<br>
+                        <strong>Luxury Assets Value:</strong> $11,000,000<br>
+                        <strong>Bank Asset Value:</strong> $1,900,000<br>
                         <strong>Predicted Outcome:</strong> Approved<br>
-                        <strong>Reason:</strong> Strong credit score, stable income, and low debt-to-income ratio.
+                        <strong>Reason:</strong> High income and manageable debt levels.
                     </p>
                 </div>
+        
+                <!-- Rejected Loan Example -->
                 <div class="bg-gradient-to-r from-red-100 to-red-200 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
                     <h3 class="text-xl font-bold text-red-800 mb-2">Loan Rejected</h3>
                     <p class="text-gray-800">
-                        <strong>Applicant:</strong> Jane Smith<br>
-                        <strong>Loan Amount:</strong> $10,000<br>
+                        <strong>Education:</strong> Not Graduate<br>
+                        <strong>Self-Employed:</strong> Yes<br>
+                        <strong>Income (Annual):</strong> $9,800,000<br>
+                        <strong>Loan Amount:</strong> $24,200,000<br>
+                        <strong>Loan Term:</strong> 20 years<br>
+                        <strong>CIBIL Score:</strong> 382<br>
+                        <strong>Residential Assets Value:</strong> $12,400,000<br>
+                        <strong>Commercial Assets Value:</strong> $8,200,000<br>
+                        <strong>Luxury Assets Value:</strong> $29,400,000<br>
+                        <strong>Bank Asset Value:</strong> $5,000,000<br>
                         <strong>Predicted Outcome:</strong> Rejected<br>
                         <strong>Reason:</strong> Low credit score and high existing debt.
                     </p>
                 </div>
             </div>
         </section>
+        
+
+        <div class="flex justify-center items-center">
+            <h1 class="text-3xl font-semibold text-white-900 mb-6 text-center">!! Try Out Your Own !!</h1>
+           
+        </div>
+        <div class="flex justify-center items-center">
+
+        <a href="/" class="bg-[#1f2937] text-white font-semibold py-2 px-4 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">
+            Lets Go!
+        </a>
+        </div>
+        
+        
         
     </main>
 
@@ -114,9 +150,9 @@
             <p class="text-white-600">Follow us on:</p>
             <br>
             <div class="flex justify-center space-x-4">
-                <a href="#" class="text-black-700 hover:text-blue-900 text-xl"><i class="fab fa-github"></i></a>
-                <a href="#" class="text-black-700 hover:text-blue-900 text-xl"><i class="fab fa-kaggle"></i></a>
-                <a href="#" class="text-black-700 hover:text-blue-900 text-xl"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/bses7/Loan-Approval-Model" class="text-black-700 hover:text-blue-900 text-xl"><i class="fab fa-github"></i></a>
+                <a href="https://www.kaggle.com/code/bisheshgiri/loan-approval" class="text-black-700 hover:text-blue-900 text-xl"><i class="fab fa-kaggle"></i></a>
+                <a href="https://www.linkedin.com/in/bisheshgiri/" class="text-black-700 hover:text-blue-900 text-xl"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
