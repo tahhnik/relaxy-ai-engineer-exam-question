@@ -8,8 +8,6 @@ from sklearn.ensemble import StackingClassifier
 from utils import preprocess
 
 
-
-
 def feature_engineering(X):
     X['loan_to_income_ratio'] = X['loan_amount'] / X['income_annum']
     X['total_asset_value'] = (X['residential_assets_value'] +
@@ -148,6 +146,29 @@ def predict_dt():
 @app.route('/about')
 def about():
     return render_template('about.html') 
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html') 
+
+
+@app.route('/submit', methods=['POST'])
+def submit_form():
+    data = request.get_json()  
+    name = data.get('name')
+    email = data.get('email')
+    message = data.get('message')
+    
+    response = {
+        'status': 'success',
+        'message': 'Form submitted successfully!',
+        'data': {
+            'name': name,
+            'email': email,
+            'message': message
+        }
+    }
+    return jsonify(response)
 
 
 if __name__ == "__main__":
