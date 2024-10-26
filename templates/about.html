@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>About Us - Loan Sense</title>
+
+    <style>
+        #scrollToTop {
+            display: none; /* Initially hide the button */
+            z-index: 1000; /* Ensure it's above other elements */
+        }
+    </style>
+    
+</head>
+<body class="bg-gradient-to-br from-blue-500 to-indigo-900 text-white min-h-screen font-sans flex flex-col justify-between">
+
+    <header class="bg-opacity-30 backdrop-blur-lg top-0 z-50 py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="flex items-center space-x-2">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" class="w-12 h-12">
+                <h1 class="text-2xl font-extrabold text-[#FAFAFA]-800 tracking-tight">Loan Sense</h1>
+            </div>
+            <nav class="space-x-6">
+                <a href="/" class="text-transparent font-bold bg-clip-text bg-white hover:bg-gradient-to-r hover:from-[#0b0dac] hover:to-[#f901de] transition duration-300">
+                    Home
+                </a>
+                <a href="/about" class="text-transparent font-bold bg-clip-text bg-white hover:bg-gradient-to-r hover:from-[#0b0dac] hover:to-[#f901de] transition duration-300">
+                    About
+                </a>
+                <a href="/contact" class="text-transparent font-bold bg-clip-text bg-white hover:bg-gradient-to-r hover:from-[#0b0dac] hover:to-[#f901de] transition duration-300">
+                    Contact
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-10 px-6">
+        <section class="mb-10 flex items-center">
+            <div class="w-full md:w-1/2 pr-6">
+                <h1 class="text-2xl font-bold text-[#FAFAFA] mb-4">About Us</h1>
+                <p class="text-gray-200 mb-4">
+                    Welcome to Loan Sense, your trusted partner in predicting loan approvals. We utilize advanced machine learning techniques to analyze various features and provide reliable predictions for loan applications. Our mission is to empower individuals and businesses by providing them with the insights they need to make informed financial decisions.
+                </p>
+
+                <p class="text-gray-200 mb-4">
+                    At Loan Sense, we believe that access to financial information is essential for making sound decisions. Our team of experts continuously improves our algorithms and models to ensure accuracy and reliability. Whether you're an individual seeking a personal loan or a business looking for financing options, we are here to help you navigate the complex loan approval process.
+                </p>
+                <div class="flex space-x-4 ">
+                    <a href="/learn-more" class="bg-gradient-to-r from-[#0b0dac] to-[#f901de] text-white font-semibold py-2 px-4 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">
+                        Learn More
+                    </a>
+                    <a href="/get-started" class="bg-teal-600 text-white font-semibold py-2 px-4 rounded-lg shadow-lg hover:bg-teal-700 transition duration-300">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2">
+                <img src="{{ url_for('static', filename='img/icon1.png') }}" alt="About Us Image" class="w-full h-auto rounded-lg ">
+            </div>
+        </section>
+        
+        <section class="mb-10 flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2">
+                <img src="{{ url_for('static', filename='img/model.png') }}" alt="About Us Image" class="w-full h-auto rounded-lg ">
+            </div>
+            <div class="md:w-1/2 md:pl-10">
+                <h2 class="text-3xl font-semibold text-white mb-4">How We Make Predictions</h2> <!-- Changed to white for better contrast -->
+                <p class="text-gray-300 mb-4"> <!-- Lightened the paragraph text -->
+                    At Loan Sense, we leverage state-of-the-art machine learning models to predict loan approvals. Our approach involves the following steps:
+                </p>
+                <ol class="list-decimal list-inside text-gray-200"> <!-- Lightened the list item text -->
+                    <li><strong>Data Collection:</strong> We gather relevant data, including applicant details, financial history, and other features that influence loan decisions.</li>
+                    <li><strong>Data Processing:</strong> Our team cleans and preprocesses the data to ensure accuracy and reliability.</li>
+                    <li><strong>Model Training:</strong> We train various machine learning models such as XGBoost, Random Forest, and Decision Trees to identify patterns and predict loan outcomes.</li>
+                    <li><strong>Prediction:</strong> Once trained, our models analyze new loan applications and provide predictions based on learned patterns.</li>
+                </ol>
+            </div>
+        </section>
+        
+
+        <section class="mb-10">
+            <h2 class="text-3xl font-semibold text-gray-900 mb-6 text-center">Examples of Loan Outcomes</h2>
+        
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gradient-to-r from-green-100 to-green-200 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-bold text-green-800 mb-2">Loan Approved</h3>
+                    <p class="text-gray-800">
+                        <strong>Applicant:</strong> John Doe<br>
+                        <strong>Loan Amount:</strong> $15,000<br>
+                        <strong>Predicted Outcome:</strong> Approved<br>
+                        <strong>Reason:</strong> Strong credit score, stable income, and low debt-to-income ratio.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-red-100 to-red-200 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-bold text-red-800 mb-2">Loan Rejected</h3>
+                    <p class="text-gray-800">
+                        <strong>Applicant:</strong> Jane Smith<br>
+                        <strong>Loan Amount:</strong> $10,000<br>
+                        <strong>Predicted Outcome:</strong> Rejected<br>
+                        <strong>Reason:</strong> Low credit score and high existing debt.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="shadow mt-10">
+        <div class="container mx-auto text-center py-4">
+            <p class="text-white-700">&copy; 2024 Loan Sense. All rights reserved.</p>
+            <p class="text-white-600">Follow us on:</p>
+            <br>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="text-black-700 hover:text-blue-900 text-xl"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-black-700 hover:text-blue-900 text-xl"><i class="fab fa-kaggle"></i></a>
+                <a href="#" class="text-black-700 hover:text-blue-900 text-xl"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollToTop" class="fixed bottom-6 right-6 bg-gradient-to-br from-blue-500 to-indigo-900 text-white rounded-full p-3 shadow-lg hover:bg-blue-700 transition duration-300" title="Scroll to Top">
+        <i class="fas fa-arrow-up text-lg"></i>
+    </button>
+
+    <script>
+        // Get the button
+        const scrollToTopButton = document.getElementById("scrollToTop");
+    
+        // Show or hide the button based on scroll position
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopButton.style.display = "block";
+            } else {
+                scrollToTopButton.style.display = "none";
+            }
+        };
+    
+        // Scroll to the top of the page when the button is clicked
+        scrollToTopButton.onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'}); // Smooth scroll
+        };
+    </script>
+    
+
+</body>
+</html>

@@ -6,6 +6,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import StackingClassifier
 
 
+
+
 def feature_engineering(X):
     X['loan_to_income_ratio'] = X['loan_amount'] / X['income_annum']
     X['total_asset_value'] = (X['residential_assets_value'] +
@@ -28,6 +30,7 @@ def feature_engineering(X):
 
 
 app = Flask(__name__)
+
 
 preprocessor = joblib.load("./models/preprocessor.pkl")
 
@@ -95,6 +98,12 @@ def predict():
 
     # table_html = processed_df.to_html(classes='data', header="true", index=False)
     # return render_template("index.html", table=table_html)
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html') 
+
 
 if __name__ == "__main__":
     app.run(debug=True)
