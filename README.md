@@ -57,6 +57,16 @@ This project incorporates LIME (Local Interpretable Model-Agnostic Explanations)
 - **Global Interpretability**: Highlights the general feature importance across all predictions.
 - **Instance-Level Interpretability**: Provides explanations for individual loan applications, offering insights into the factors affecting each prediction.
 
+## Model Deployment
+
+The Loan Approval Prediction model is deployed using Render, enabling users to interact with the model in real-time. This deployment provides a seamless way for end-users to enter loan application details and receive instant predictions on approval status.
+
+### Access the Model:
+- **[Loan Approval Prediction App on Render](https://loan-approval-model.onrender.com/)**
+
+Visit the link to test the model's predictive capabilities and explore the user-friendly interface built for efficient loan assessment.
+
+
 ## Tech Stack
 
 - **Backend**: Flask
