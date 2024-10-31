@@ -30,7 +30,7 @@ The dataset used for this project contains various features related to loan appl
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/your-username/loan-approval-prediction.git
+    git clone https://github.com/bses7/Loan-Approval-Model.git
     cd loan-approval-prediction
     ```
 
