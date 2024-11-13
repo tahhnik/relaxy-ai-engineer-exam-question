@@ -1,6 +1,7 @@
 # AI Engineer Technical Assessment - Relaxy Intelligence
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5c52978-7a2e-47f8-b3f7-e77429aab32f/856cba8e-47b6-49a2-8e66-fce9fc03d31b/image.png)
+![image](https://github.com/user-attachments/assets/b1d535e9-49d5-4bc5-9a9a-c55ebd4a34f7)
+
 
 ## Dear Candidate,
 
@@ -16,7 +17,9 @@ You'll be working on implementing critical production features that would help s
 
 The Loan Approval Model codebase represents a production-grade ML pipeline that handles loan approval predictions. The system includes modular components for data ingestion, transformation, and model training, built with scalability and maintainability in mind. This foundation provides an excellent starting point for implementing advanced MLOps capabilities.
 
-![svgviewer-png-output (2).png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5c52978-7a2e-47f8-b3f7-e77429aab32f/0d8df9ad-4e51-4d86-bfee-488743491ffe/svgviewer-png-output_(2).png)
+![svgviewer-png-output (2)](https://github.com/user-attachments/assets/6fdfc7fc-48e9-41be-b327-abc3bd6687bd)
+
+
 
 ### Initial Setup Instructions
 
@@ -98,7 +101,8 @@ If you have any questions about the setup or requirements, please don't hesitate
 
 The first part of your task focuses on implementing comprehensive experiment tracking using MLFlow. You need to set up MLFlow to track all aspects of the model development process. This includes configuring MLFlow to use a local SQLite database for storing experiment data and setting up proper artifact storage. The system should track various model metrics like accuracy, precision, recall, and F1-score, along with training parameters and model artifacts.
 
-![svgviewer-png-output (3).png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5c52978-7a2e-47f8-b3f7-e77429aab32f/1d698635-13c0-4fd9-ac35-750ae5467402/svgviewer-png-output_(3).png)
+![svgviewer-png-output (3)](https://github.com/user-attachments/assets/2367f379-a85d-4a89-a45a-4a31a92cf19b)
+
 
 A crucial aspect of this implementation is data versioning. As model performance heavily depends on the training data, you need to track and version all data characteristics. This includes logging feature distributions, missing value counts, and any transformations applied to the data. The preprocessing pipeline should be versioned and stored alongside the model artifacts to ensure reproducibility.
 
@@ -114,7 +118,8 @@ After training and evaluating all models, you must identify the best performing 
 
 Once you have the MLFlow tracking system in place, the second part involves deploying the best performing model as a REST API. You'll need to create a Flask application that serves predictions from your model. The application should include endpoints for both single and batch predictions, along with health checks and model information endpoints.
 
-![svgviewer-png-output (4).png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5c52978-7a2e-47f8-b3f7-e77429aab32f/f7f20e91-63fe-4c31-b087-adb3edd325ee/svgviewer-png-output_(4).png)
+![svgviewer-png-output (4)](https://github.com/user-attachments/assets/eb7e79ca-84e1-48a4-80b5-6f0ae12c74fb)
+
 
 The Flask application needs to be containerized using Docker for deployment. This involves creating a proper Dockerfile that includes all necessary dependencies and configurations. The container should be set up to automatically load the latest production model from the MLflow registry. Special attention should be paid to proper error handling, input validation, and request logging to ensure the application is production-ready.
 
@@ -378,7 +383,8 @@ Your implementation will be evaluated based on:
 
 The loan approval prediction system is currently deployed in production with MLFlow tracking, but lacks real-time monitoring of the model's behavior and performance. Your task is to implement a comprehensive monitoring solution using Prometheus to track model predictions, performance metrics, and system health. This will enable the team to detect issues early and maintain model reliability in production.
 
-![svgviewer-png-output (5).png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f5c52978-7a2e-47f8-b3f7-e77429aab32f/ba1d1c0a-28d5-4e6e-8e3d-6d6c8a054ebc/svgviewer-png-output_(5).png)
+![svgviewer-png-output (5)](https://github.com/user-attachments/assets/49ef4989-5c9b-4cf5-a254-11b78e7efe20)
+
 
 ## Part 1: Metrics Implementation
 
