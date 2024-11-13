@@ -134,7 +134,6 @@ When implementing the Flask API for the loan approval model, you need to create 
 ### Single Prediction
 
 ```
-Copy
 Endpoint: /predict
 Method: POST
 
@@ -147,7 +146,6 @@ Method: POST
 ### Batch Prediction
 
 ```
-Copy
 Endpoint: /predict/batch
 Method: POST
 
@@ -161,7 +159,6 @@ Method: POST
 ## 2. Health Check Endpoint
 
 ```
-Copy
 Endpoint: /health
 Method: GET
 
@@ -177,8 +174,6 @@ Purpose:
 Expected Response:
 
 ```json
-json
-Copy
 {
     "status": "healthy",
     "checks": {
