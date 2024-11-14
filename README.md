@@ -33,6 +33,10 @@ The Loan Approval Model codebase represents a production-grade ML pipeline that 
 2. **Create and Activate Virtual Environment**
     
     ```bash
+    sudo apt-get update
+    
+    sudo apt install python3.8-venv
+    
     python -m venv venv
     
     # On Unix/MacOS
